@@ -16,7 +16,7 @@
 First we have to ensure that the BCI is connected and the signals are good. These instructions are for the Unicorn BCI from gTec.
 
 1. Connect the BCI to the computer using bluetooth.
-![Alt text](img\unicorn1.png)
+![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/unicorn1.png)
 
 2. Run _**Unicorn Suite Hybrid Black**_ from the _**Start Menu**_
 ![Alt text](img\unicorn2.png)
