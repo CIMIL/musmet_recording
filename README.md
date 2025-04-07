@@ -1,9 +1,13 @@
 
 # Network setup
 
+0. _Note that all programs work exclusively on Windows._
 1. Connect the Musical isntruments, BCI, and MR headset to the computer.
 2. Connect all coomputers to the a local network.
-3. Make sure all the computers have their firewalls turned off.
+3. Make sure all the computers have their firewalls turned off. When you run each program for the first time, you will be prompted to allow the program access. Allow the programs to communicate on all networks.
+
+    ![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/firewall1.png)
+
 4. One computer will act as the MASTER - to start and stop the recordings. Assign one of the computers to this role. 
 
 
@@ -97,7 +101,8 @@ The audio bridge will convert the audio into LSL streams to be saved and synchro
 ## OSC Bridge
 
 The OSC bridge will convert the OSC into LSL streams to be saved and synchronized.
-**There is a bug in the system. Once you Stop the server, you need to close and re-open the OSC Bridge**
+~~**There is a bug in the system. Once you Stop the server, you need to close and re-open the OSC Bridge**~~ 
+*-------- bug is fixed* 
 
 1. Select **3-START_osc-bridge.bat** 
 
