@@ -1,8 +1,5 @@
 
-# Recording Multiple Streams concurrently
-
-
-## Network setup
+# Network setup
 
 1. Connect the Musical isntruments, BCI, and MR headset to the computer.
 2. Connect all coomputers to the a local network.
@@ -11,28 +8,32 @@
 
 
 
-## Connecting Unicorn BCI interface
+# Connecting Unicorn BCI interface
 
 First we have to ensure that the BCI is connected and the signals are good. These instructions are for the Unicorn BCI from gTec.
 
 1. Connect the BCI to the computer using bluetooth.
-![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/unicorn1.png)
+
+    ![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/unicorn1.png)
 
 2. Run _**Unicorn Suite Hybrid Black**_ from the _**Start Menu**_
-![Alt text](img\unicorn2.png)
+
+    ![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/unicorn2.png)
 
 3. Select _**Apps**_ -> _**Unicorn Reader**_ -> _**Open**_
-![Alt text](img\unicorn3.png)
+
+    ![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/unicorn3.png)
 
 4. When you Press _**Play/Stop**_ you will see the signals. The panel on the right will specify if the BCI nodes are connected properly, and transmitting a good signal. 
-![Alt text](img\unicorn4.png)
+
+    ![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/unicorn4.png)
 
 5. Once you have confirmed that the BCI is connected and all connections are good, close _**Unicorn Suite Hybrid Black**_
 
 
----
----
-## Recording Multiple streams of Data
+
+
+# Recording Multiple streams of Data
 
 We use LSL streams to record the data with time stamps. **LabRecorder is used for the actual recording**. There are 3 other applications that act as bridges, plus a controller which should **only** run on the master. 
 
@@ -42,15 +43,15 @@ We use LSL streams to record the data with time stamps. **LabRecorder is used fo
 
 You need to clone this repo, which includes all the software for recording.
 
----
-### Controller
+
+## Controller
 
 **This application is required to start and stop the recordings on all devices simultaneously. THIS SHOULD ONLY RUN ON THE MASTER COMPUTER**
 
 
 1. Select **0-START CONTROLLER.bat** 
 
-    ![Alt text](img\apps.png)
+    ![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/apps.png)
     
 2. Type the IP addresses of each computer on the interface. The first one should be left as *localhost* to start/stop recording on the MASTER.
 
@@ -59,7 +60,7 @@ You need to clone this repo, which includes all the software for recording.
 
 4. Once recording is complete, press **Stop all** to end.
 
-    ![Alt text](img\controller.png)
+    ![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/controller.png)
 
 
 
@@ -72,14 +73,14 @@ This situation can happen due to issues in the network, or if the firewalls bloc
     2. Ask the musicians to play a single note together, such that the streams may be synchronized later.
 
 
----
-### Audio Bridge
+
+## Audio Bridge
 
 The audio bridge will convert the audio into LSL streams to be saved and synchronized.
 
 1. Select **2-START_audio-bridge.bat** 
 
-    ![Alt text](img\apps.png)
+    ![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/apps.png)
 
 2. Select the corresponding input from the Audio Interface.
 
@@ -88,19 +89,19 @@ The audio bridge will convert the audio into LSL streams to be saved and synchro
 4. **Start Stream** button starts streaming the audio as a LSL stream and recording.
 5. **Stop Stream** button will end the LSL stream, and save the audio as a _.wav_ file.
 
-    ![alt text](img\audio.png)
+    ![alt text](https://github.com/ns2max/musmet_recording/blob/main/img/audio.png)
 
 
 
----
-### OSC Bridge
+
+## OSC Bridge
 
 The OSC bridge will convert the OSC into LSL streams to be saved and synchronized.
 **There is a bug in the system. Once you Stop the server, you need to close and re-open the OSC Bridge**
 
 1. Select **3-START_osc-bridge.bat** 
 
-    ![Alt text](img\apps.png)
+    ![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/apps.png)
 
 2. The window will show the IP address of the device, along with the port to create the OSC server.
 
@@ -109,15 +110,15 @@ The OSC bridge will convert the OSC into LSL streams to be saved and synchronize
 4. **Start Stream** button starts the OSC server and LSL stream.
 5. **Stop Stream** button will end the server.
 
-    ![alt text](img\osc.png)
+    ![alt text](https://github.com/ns2max/musmet_recording/blob/main/img/osc.png)
 
 
----
-### Unicorn Bridge
+
+## Unicorn Bridge
 
 1. Select **4-START_unicorn-bridge.bat** 
 
-    ![Alt text](img\apps.png)
+    ![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/apps.png)
 
 2. Select the connected Unicorn device.
 
@@ -130,23 +131,51 @@ The OSC bridge will convert the OSC into LSL streams to be saved and synchronize
 6. **Start Stream** button starts the LSL stream.
 7. **Stop Stream** button will end the stream.
 
-    ![alt text](img\unicorn5.png)
+    ![alt text](https://github.com/ns2max/musmet_recording/blob/main/img/unicorn5.png)
 
 
 
----
-### LabRecorder
+
+## LabRecorder
 
 1. Select **1-START_LabRecorder.bat** 
 
-    ![Alt text](img\apps.png)
+    ![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/apps.png)
 
-2. The interface will show all the available LSL streams. If all steps are above were done correctly, you should see
+2. The interface will show all the available LSL streams. Select all the streams. You can use the Select All button. If all steps are above were done correctly, you should see
 
-    - ONE Audio Stream
-    - ONE OSC stream
-    - SEVEN BCI streams
-        -  
+    - **ONE** Audio Stream
+    - **ONE** OSC stream
+    - **SIX** BCI streams
+        - BAT stream
+        - ACC stream
+        - VALID stream
+        - GYR stream
+        - EEG stream 
+        - CNT stream
+
+5. The field _**Study Root**_ is the location where the xdf file will be saved. 
+
+6. The filenames are generated using the BIDS framework. 
+You can choose to use this framework, or uncheck the BIDS checkbox. _This setting only affects the filename and you are free to use either option_. 
+
+7. Press Start/Stop to start or stop the recording ONLY in the local COMPUTER. You can use the Controller to start and stop all recordings simultaneously.
 
 
-    ![alt text](img\labrecorder.png)
+    ![alt text](https://github.com/ns2max/musmet_recording/blob/main/img/labrecorder.png)
+
+
+
+
+## All apps view
+
+If all steps were followed corectly, you will see the windows as shown below:
+
+    1. RC Controller
+    2. LSL Audio Streamber
+    3. OSC to LS Bridge
+    4. Unicorn LSL
+    5. Lab Recorder
+    
+
+![alt text](https://github.com/ns2max/musmet_recording/blob/main/img/all.png)
