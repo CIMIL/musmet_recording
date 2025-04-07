@@ -53,12 +53,12 @@ You need to clone this repo, which includes all the software for recording.
 
     ![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/apps.png)
     
-2. Type the IP addresses of each computer on the interface. The first one should be left as *localhost* to start/stop recording on the MASTER.
+2. Type the IP addresses of each computer on the interface. The first one should be left as *localhost* to start/stop recording on the MASTER. You can find the IP address of the computer using the OSC bridge that will be introduced next.
 
 
 3. Once you are ready, and the Audio, OSC, and UNICORN bridges are set up, you may press **Start All** to start the recording.
 
-4. Once recording is complete, press **Stop all** to end.
+4. Once recording is complete, press **Stop All** to end.
 
     ![Alt text](https://github.com/ns2max/musmet_recording/blob/main/img/controller.png)
 
@@ -67,7 +67,7 @@ You need to clone this repo, which includes all the software for recording.
 
 ### What to do in Case the Controller does not start recording on all computers.
 
-This situation can happen due to issues in the network, or if the firewalls block network ports. In case this happens, follow the steps below to start/stop recording.
+This situation can happen due to issues in the network, or if the firewalls block network ports. In case this happens, follow the alternate steps below to start/stop recording.
 
     1. Start the recording on each computer
     2. Ask the musicians to play a single note together, such that the streams may be synchronized later.
