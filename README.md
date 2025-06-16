@@ -1,3 +1,9 @@
+# MCVCP140.dll error
+
+If you inecouter the error that states MSVCP140.dll was not found, install it from the below links.
+[https://aka.ms/vs/16/release/vc_redist.x86.exe](https://aka.ms/vs/16/release/vc_redist.x86.exe)
+    
+[https://aka.ms/vs/16/release/vc_redist.x64.exe](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 
 # Network setup
 
